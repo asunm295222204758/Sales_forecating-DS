@@ -6,6 +6,7 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 import traceback
+from pathlib import Path
 
 def create_forecast_plot(forecast, title):
     fig = go.Figure()
@@ -20,8 +21,18 @@ def create_forecast_plot(forecast, title):
 
 def main():
     try:
-        # Load your data
-        df = pd.read_csv(r'C:\Users\egang\OneDrive\Desktop\Sales forecasting\Sales_forecating-DS\Walmart.csv')
+        # Get the current file's directory and construct path to data file
+        current_dir = Path(__file__).parent
+        data_file = current_dir / 'Walmart.csv'
+        
+        # Load your data with error handling
+        if not data_file.exists():
+            st.error(f"Data file not found at: {data_file}")
+            st.error("Please ensure 'Walmart.csv' is in the same directory as this script.")
+            return
+            
+        # Load the data
+        df = pd.read_csv(data_file)
         
         # Print column names to debug
         st.write("Original column names:", df.columns.tolist())
