@@ -28,4 +28,4 @@ Retail businesses often struggle with overstocking or stockouts due to poor sale
 - Easy-to-use charts and insights for decision-making.
 
 ## 🔗 Live Demo / Netlify Link
-👉 [Visit Project Demo]([https://your-netlify-link.com](https://salesforecasting007.streamlit.app/))
+👉 [Visit Project Demo](https://your-netlify-link.com](https://salesforecasting007.streamlit.app/)
